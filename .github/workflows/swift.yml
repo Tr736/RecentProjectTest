@@ -1,0 +1,26 @@
+name: Swift CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        destination: ['platform=iOS Simulator,name=iPhone 12,OS=14.1']
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_12.1.app
+
+    - name: Xcode build
+      run: cd iOS-CodeScreen; xcodebuild clean build -scheme iOS-CodeScreen -destination "${destination}"
+      env:
+        destination: ${{ matrix.destination }}
+
+    - name: Xcode test
+      run: cd iOS-CodeScreen; xcodebuild -project iOS-CodeScreen.xcodeproj -scheme iOS-CodeScreen -destination "${destination}" clean test | xcpretty && exit ${PIPESTATUS[0]}
+      env:
+        destination: ${{ matrix.destination }}
