@@ -61,8 +61,13 @@ Please don't hesitate to contact us with any questions. It's better to ask for c
 
 ## Notes 📝
 
-Please add any notes here to be considered when reviewing your task. For example, next steps that you would take if you had more time.
+More time was spent on the Data side of the task rather than the UI. (In fact hardly anytime was spent on the UI thus it admittedly looks like pants.) 
+I deemed data consumption and tests were relatively important than the UI for this particular test.
+If you want to see evidence of my UI work please refer to the Triller || IBD Care app on the app store.
 
+I wanted to demonstrate the use of protocols and how they can help avoid reliance on 3rd party frameworks, which I feel is super important when working in a modularised code base. And a really neat API class that makes it super easy to consume REST/JSON Data
+
+This project took me 7 hours to write in all. This is because I believe if the foundations of a project are strong then anything that comes after will be nicer to work work. Thus good architecture from the get-go on any project is the most important part of any greenfield project.
 
 
 ## Submitting your solution
