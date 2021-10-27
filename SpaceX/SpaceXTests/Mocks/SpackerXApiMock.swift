@@ -22,7 +22,7 @@ public class SpaceXAPIMock: SpaceXAPI {
                 return Promise(error: error)
             }
         } else {
-            return Promise(error: TrillerAPIMockError.isAMock)
+            return Promise(error: SpaceXAPIMockError.isAMock)
         }
     }
 
@@ -37,10 +37,10 @@ public class SpaceXAPIMock: SpaceXAPI {
         if let data = executeReturnData {
             return .value((data, URLResponse()))
         }
-        return Promise(error: TrillerAPIMockError.isAMock)
+        return Promise(error: SpaceXAPIMockError.isAMock)
     }
 }
 
-private enum TrillerAPIMockError: Error {
+private enum SpaceXAPIMockError: Error {
     case isAMock
 }
